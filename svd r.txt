@@ -1,0 +1,31 @@
+how do I see the variable values for say plotWord 22.. how would I see sub, and dates etc.. i run the script (ctrl enter)
+
+1)  ##Create a new dataframe here
+  metaInfo = data.frame(PctChg= close[startIdx] / close[endIdx] -1, Range = max(startIdx:endIdx,Hsub) - min(), vsMA200 = close[endIdx]/200day moving average (used with XTS) )
+https://cran.r-project.org/web/packages/TTR/TTR.pdf
+
+summarize histogram
+
+
+to see the first 5 PCA
+
+a5 <- svd1$u[,1:5] %*% diag(svd1$d[1:5]) %*% t(svd1$v[,1:5])
+with 10 -- = (svd1$u[,1:10] %*% diag(svd1$d[1:10]) %*% t(svd1$v[,1:10]))
+
+names(YourDataSet)[maxContrib]## shows the highest contributor
+maxContrib <- which.max(svd1$v[, 2])
+
+scale ==> normalizes the data
+
+for K means 
+
+its a function, just call it...
+
+
+points(dataFrame$x, dataFrame$y)
+
+
+avi_keam = kmeans(dataFrame, centers = 3, iter.max = 700 )
+dataFrameBinded =cbind(dataFrame, avi_keam$cluster)  #bind the cluster to the original data set
+plot(dataFrameBinded$x, dataFrameBinded$y, col =dataFrameBinded$`avi_keam$cluster`, pch= 19)
+points(avi_keam$centers, col = c("red", "yellow", "blue"), pch = 19)
